@@ -2,7 +2,7 @@ body{
     background-color: lightgrey;
 }
 
-.btn {
+.collapsible-header .btn {
     height: 24px;
     width: 60px;
     line-height: 24px;
