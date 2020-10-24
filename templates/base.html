@@ -7,9 +7,29 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <!--Materialize Icons-->
-    <title>Document</title>
+    <title>Task Manager</title>
   </head>
   <body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{url_for('get_tasks')}}" class="brand-logo">Task Manager</a>
+                <a href="{{url_for('get_tasks')}}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_tasks')}}">View Tasks</a></li>
+                    <li><a href="{{url_for('add_task')}}">Add Task</a></li>
+                    <li><a href="{{url_for('get_categories')}}">View Categories</a></li>
+                    <li><a href="{{url_for('new_category')}}">Add Category</a></li>
+                </ul>
+                <ul class="sidenav" id="mobile-demo">
+                    <li><a href="{{url_for('get_tasks')}}">View Tasks</a></li>
+                    <li><a href="{{url_for('add_task')}}">Add Task</a></li>
+                    <li><a href="{{url_for('get_categories')}}">View Categories</a></li>
+                    <li><a href="{{url_for('new_category')}}">Add Category</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="container"> <!-- Wrapping this in a container works same as bootstrap making it more presentable -->
     {% block content %} {% endblock %}
     </div>
@@ -19,6 +39,7 @@
       $(document).ready(function () {
         $('.collapsible').collapsible();
         $('select').formSelect();
+        $('.sidenav').sidenav();
       });
     </script>
   </body>

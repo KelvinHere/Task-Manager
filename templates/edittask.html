@@ -7,7 +7,7 @@
       <div class="input-field col s12 selectfix">
         <i class="material-icons prefix">poll</i>
         <select id="category" name="category_name">
-          <option value="" disabled selected>Choose your option</option>
+          <option value="{{task.category_name}}" disabled selected>{{task.category_name}}</option>
           {% for cat in categories %} 
           {% if cat.category_name == task.category_name %}
           <option value="{{ cat.category_name }}" selected>{{ cat.category_name }}</option>
